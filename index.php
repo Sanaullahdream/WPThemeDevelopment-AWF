@@ -1,25 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="en"> -->
-
-<!-- <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-<!--  <title><?php the_title(); ?></title>
-
-         <title><?php bloginfo('name'); ?> <?php wp_title('-'); ?></title>
-       
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri().'/css/bootstrap.css'; ?>"
-    <link rel="stylesheet" href=" <?php echo get_template_directory_uri().'/css/font-awesome.min.css'; ?>"
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri().'/css/owl.carousel.min.css'; ?>"
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/responsive.css">
-    
-</head> -->
+<!-- AWF Charity theme -->
 
 <?php get_header(); ?>
 
