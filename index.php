@@ -14,12 +14,13 @@
                                     
                                     <p> <?php bloginfo('description');?></p>
                                     
-                                    <h5 class="white-button"><a href="#">DONATE NOW</a></h5>
+                                    <h5 class="white-button"><a href="<?php get_template_directory_uri(); ?>">DONATE NOW</a></h5>
                                     <h5><a href="#">CONTACT US</a></h5>
                                 </div>
                             </div>
             
             <!-- Post content Dynamic > Dream: -->
+
                 <?php while (have_posts()): the_post(); ?>
                             <div class="item">
                                 <div class="text">
@@ -31,32 +32,9 @@
                             </div>
                     
                     <?php endwhile; ?>
+                    
+                <!-- Post content Dynamic End > Dream: -->
 
-
-                            <div class="item">
-                                <div class="text">
-                                    <h3>CHILDREN NEED YOUR HELP</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim <br> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
-                                    <h5 class="white-button"><a href="#">DONATE NOW</a></h5>
-                                    <h5><a href="#">CONTACT US</a></h5>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="text">
-                                    <h3>CHILDREN NEED YOUR HELP</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim <br> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
-                                    <h5 class="white-button"><a href="#">DONATE NOW</a></h5>
-                                    <h5><a href="#">CONTACT US</a></h5>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="text">
-                                    <h3>CHILDREN NEED YOUR HELP</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim <br> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
-                                    <h5 class="white-button"><a href="#">DONATE NOW</a></h5>
-                                    <h5><a href="#">CONTACT US</a></h5>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,33 +48,32 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor <br> incididunt ut labore et dolore magna aliqua. </p>
             <div class="container">
                 <div class="row">
+
+                    <!-- Custom Post type dynamic -->
+                    <?php 
+                    $custompost = new Wp_Query(array(
+                        'post_type' => 'custompost',
+                        'posts_per_page' => 3 ,
+                    ));
+
+                    ?>
+    `            <!-- Custom Post type dynamic End-->
+
+                <?php while ($custompost-> have_posts()): $custompost-> the_post(); ?>
+                    
                     <div class="col-md-4 col-xs-12">
+
                         <div class="single-Promo">
                             <div class="promo-icon">
                                 <i class="material-icons">near_me</i>
                             </div>
-                            <h2><a href="#">Fundraising</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+                            <h2><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
+                            <p><?php the_content(); ?> </p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-xs-12">
-                        <div class="single-Promo">
-                            <div class="promo-icon">
-                                <i class="material-icons">favorite</i>
-                            </div>
-                            <h2><a href="#">Volunteering</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-xs-12">
-                        <div class="single-Promo">
-                            <div class="promo-icon">
-                                <i class="material-icons">dashboard</i>
-                            </div>
-                            <h2><a href="#">Our Programs</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
-                        </div>
-                    </div>
+        
+                <?php endwhile; ?>                  
+
                 </div>
             </div>
         </section>

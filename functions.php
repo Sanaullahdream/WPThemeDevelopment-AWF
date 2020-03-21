@@ -6,6 +6,8 @@ Register Sidebar and Widgetized Areas
 
 function awf_widget_areas(){
 
+
+
 	register_sidebar(array(
 		'name' => __('Footer 1', 'awf'),
 		'id' => 'footer-1',
@@ -49,6 +51,19 @@ function awf_widget_areas(){
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 
+	));
+
+
+		// Custom Post type Register
+	
+	register_post_type('custompost', array(
+		'labels' => array(
+			'name' => 'Custom Post',
+			'add_new_item' => 'Add Your Custom Post',
+
+		),
+		'public' => true,
+		'sections' => array ('title', 'editor', 'thumbnail'),
 
 	));
 }
